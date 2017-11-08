@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -410,19 +410,52 @@ We switched to active POS 3.0 and now earnings for POS mining is only possible i
 <p>All the basic commands available in the console.
 You can see them by typing <span class="mark_orange mark_bold">help</span> command</p>
 <p><a class="fancybox" href="img-fq/help.jpg" title=""><img class="imgen" src="img-fq/help.jpg" alt="help"></a></p>
+
 <p id="q23" class="abzd"><span class="pun">23. Q:</span></p>
 <p>What I need to do to run two wallet in one system?</p>
 <p class="abz">A:</p>
-<p>This is simple enough.
-All you need is to create two independent catalogue (for each the wallet must be used your file directory).
-And produce the launch of one of the wallet using the shortcut.</p>
-<p>Also, you need to add to the one file diamond.conf information for redirect port.
-The label needs to contain this line (startup with drive D:\).</p>
+<p>This is simple enough. All you need is to create two independent catalogue (for each the wallet must be used your file directory).</p>
+<p><span class="adab">1.</span> Close any instances of the wallet, press windowsbutton + R (for running), write:
+<div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
+%appdata%
+</code></pre></div>
+<p>copy your existing directory to another directory for instance:</p>
+<div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
+d:\DMD2
+</code></pre></div>
+<p><span class="adab">2.</span> Produce a shortcut on your desktop pointing to the already installed diamond-qt</p>
+<p><span class="adab">3.</span> Right click on the shortcut, choose properties, under Shortcut tab, in the Target: textbox, write the target directory for instance</p>
 <div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
 D:\Diamond-qt.exe -datadir=d:\DMD2
 </code></pre></div>
-<p>The port can be any free port on your system.</p>
+<p><span class="adab">4.</span> Go into diamond.conf in that <span class="mark_orange">(d:\DMD2)</span> directory and add:</p>
+<div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
+port=17772
+</code></pre></div>
+<p><span class="mark_red mark_bold mark_size20">*</span><span class="mark_green"> The port can be any free port on your system.</span</p>
+<p>The label needs to contain this line <span class="mark_orange">(startup with drive D:\)</span>.</p>
 <p><a class="fancybox" href="img-fq/wallet2.jpg" title=""><img class="imgen" src="img-fq/wallet2.jpg" alt="wallet2"></a></p>
+
+<p id="q24" class="abzd"><span class="pun">24. Q:</span></p>
+<p>I installed the wallet but how can I see the new address and edit its label?</p>
+<p class="abz">A:</p>
+<p>For get your address for the wallet, you need to go to the main menu and select the tab Receiving address. Click on this item and in the opened window select the address
+For edit a label address, you need to click on the Label option.</p>
+<p><a class="fancybox" href="img-fq/step-1.jpg" data-fancybox-group="button" title=""><img class="imgen" src="img-fq/step-1.jpg" alt="step-1"></a>
+<a class="fancybox" href="img-fq/step-2.jpg" data-fancybox-group="button" title=""><img class="imgen" src="img-fq/step-2.jpg" alt="step-2"></a>
+<a class="fancybox" href="img-fq/step-3.jpg" data-fancybox-group="button" title=""><img class="imgen" src="img-fq/step-3.jpg" alt="step-3"></a></p>
+<p>If you want to have a new address, you must go to tab Receive and in the opened window, click on the Request payment. After that, will be open a window with your new address.</p>
+<p><a class="fancybox" href="img-fq/new_address1.jpg" data-fancybox-group="button" title=""><img class="imgen" src="img-fq/new_address1.jpg" alt="step-4"></a>
+<a class="fancybox" href="img-fq/new_address2.jpg" data-fancybox-group="button" title=""><img class="imgen" src="img-fq/new_address2.jpg" alt="step-5"></a></p>
+<p>Now, if you go back to the main menu tab Receiving you will see there are two of your addresses.</p>
+<p><span class="mark_red mark_bold mark_size20">*</span> <span class="mark_orange mark_bold mark_size13">It is better not to create new addresses unless necessary, that would not confuse in the it.</span></p>
+<a class="fancybox" href="img-fq/new_address3.jpg" title=""><img class="imgen" src="img-fq/new_address3.jpg" alt="step-6"></a></p>
+<p id="q25" class="abzd"><span class="pun">25. Q:</span></p>
+<p>I found that in my wallet there are a few empty addresses, can I delete them?</p>
+<p class="abz">A:</p>
+<p>Delete the empty address, only if you are Ready to remove your file wallet.dat and create a new one. But for this you have to empty your primary DMD address and temporarily send your DMD  to another wallet.</p>
+<p>You must be careful, as any removal of the file wallet.dat can cause a loss of coins.</p>
+<p><span class="mark_red mark_bold mark_size20">*</span> <span class="mark_orange mark_bold mark_size13">Remove only after checks what your file wallet.dat is empty.</span></p>
 
 <p class="leften"><span class="mark_green mark_bold mark_size20">Additional Question</span></p>
 <p class="abzd"><span class="push">01. Q:</span></p>
