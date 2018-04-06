@@ -435,13 +435,26 @@ d:\DMD2
 <div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
 D:\Diamond-qt.exe -datadir=d:\DMD2
 </code></pre></div>
-<p><span class="adab">Step 4.</span> Go into diamond.conf in that<span class="mark_orange">(d:\DMD2)</span> directory and add:</p>
+<p><span class="adab">Step 4.</span> Go into diamond.conf in that <span class="mark_orange">(d:\DMD2)</span> directory and add:</p>
 <div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
 port=17772
 </code></pre></div>
 <p><span class="mark_red mark_bold mark_size20">*</span><span class="mark_green"> The port can be any free port on your system.</span</p>
 <p>The label needs to contain this line <span class="mark_orange">(startup with drive D:\)</span>.</p>
 <p><a class="fancybox" href="img-fq/wallet2.jpg" title=""><img class="imgen" src="img-fq/wallet2.jpg" alt="wallet2"></a></p>
+
+<p id="altway"><span class="adab">Alternative way</span></p>
+<p>There is an alternative way to run that allows you to run the wallet without binding to the drive letter.</p>
+<p>This can be beneficial if you are using a removable USB hard disk or USB flash drive</p>
+<p>To do this, you need to create a folder named <span class="mark_orange">DMD</span> next to your diamond-qt file.exe</p>
+<p>And then create a shortcut to the content:</p>
+<div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
+%comspec% /c start /d "%CD%" diamond-qt.exe  -datadir=DMD -port=17772
+</code></pre></div>
+<p>The file <span class="mark_orange">diamond.conf</span> remains empty.</p>
+<p>Now you will only have to mark the launch in the minimum form and assign your icon for this shortcut. Now you can carry your wallet file along with a folder and a shortcut to any other location</p>
+<p>More detail you can see how it is done in this small GIF clip:</p>
+<p><a class="fancybox" href="img-fq/wallet-start.gif" title="alternative wallet launch"><img class="imgen" src="img-fq/screen.gif" alt="alternative wallet launch"></a></p>
 <p id="q24" class="abzd"><span class="pun">24. Q:</span></p>
 <p>I installed the wallet. How can I see the new address and edit its label?</p>
 <p class="abz">A:</p>
