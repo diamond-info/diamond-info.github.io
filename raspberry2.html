@@ -73,7 +73,7 @@
 <div id="exchange" class="parent">
 <ul>
 <li class="marks"><span class="sim">&#10039;</span>  Exchange  <span class="sim">&#10039;</span> </li>
-<li id="dops"><a href="https://www.bittrex.com/Market/?MarketName=BTC-DMD" title="Bittrex">Bittrex Exchange</a></li>
+<li id="dops"><a href="https://crex24.com/ru/exchange/DMD-BTC" title="crex24">crex24 Exchange</a></li>
 <li id="dops"><a href="https://coinsmarkets.com/trade-BTC-DMD.htm" title="Coinsmarkets">Coinsmarkets Exchange</a></li>
 <li id="dops"><a href="https://btcpop.co/home.php" title="Btcpop">Btcpop Exchange</a></li>
 <li id="dops" class="last"><a href="https://www.livecoin.net/en/voting">Livecoin</a></li>
@@ -128,7 +128,7 @@
 <p class="push">1.</p>
 <p>Disclaimer</p>
 <p><span class="adab">1.</span>This guide will walk you through the compilation steps of a headless DMD client.
-That means you won’t have a GUI, just the console version of the wallet (also called rpc wallet).
+That means you wonï¿½t have a GUI, just the console version of the wallet (also called rpc wallet).
 If you are not comfortable with the command line, you may give up on the idea of using the Pi altogether, and opt for a fully featured PC instead (Linux, Mac, or Windows based) with enough resources to run a fully fledged QT wallet.</p>
 <p><span class="adab">2.</span>Once compiled, the wallet can be used for holding DMD funds, coin staking, or to setup a masternode.
 The specifics for running such variation will not be presented here, and should be obtained at bitcointalk.org, bitdiamonds website, or the Slack Diamond group.</p>
@@ -140,8 +140,8 @@ It is not, and does not intend to be, an official wallet release.
 The author of the guide or the DMD Development Team should NOT be held responsible for any loss of DMD funds as a consequence of improper wallet compilation.
 In short, use the guide at your own risk!</p>
 <p><span class="adab">6.</span>As a safety measure, it is strongly recommended that you make transfer tests with smaller coin amounts to ensure you have a fulling working wallet, prior to managing larger DMD amounts.</p>
-<p><span class="adab">7.</span>If you enconter any dificulties along the compilation process, please PM user shinebright on DMD’s Slack group, and I’ll be glad to help you anyway I can.
-Please note that I’m no TI expert, just a DMD user with lots of interest in low power consumption staking with the most solid and rewarding cryptocoin!</p>
+<p><span class="adab">7.</span>If you enconter any dificulties along the compilation process, please PM user shinebright on DMDï¿½s Slack group, and Iï¿½ll be glad to help you anyway I can.
+Please note that Iï¿½m no TI expert, just a DMD user with lots of interest in low power consumption staking with the most solid and rewarding cryptocoin!</p>
 <p class="push">2.</p>
 <p>Hardware requirements</p>
 <p>- Raspberry Pi with 512mb RAM (models B and above)</p>
@@ -161,7 +161,7 @@ If you have Raspbian this version already installed, you are welcome to try comp
 <p>Note that Raspbian Lite is the console-only version of the OS, with a very small footprint (ideal to be run in headless mode).</p>
 <p class="push">5.</p>
 <p>Burn the OS into the SD Card</p>
-<p>For this step, I recommend that you follow Raspberry Pi’s official tutorial at</p>
+<p>For this step, I recommend that you follow Raspberry Piï¿½s official tutorial at</p>
 <p> <a href="https://www.raspberrypi.org/documentation/installation/installing-images/" target="_blank">raspberrypi.org</a></p>
 <p>There you can find detailed instructions for 'burning' the image into the SD card, on various host operating systems (Window, Linux or Mac).</p>
 <p class="push">6.</p>
@@ -421,7 +421,7 @@ addnode=99.21.69.25
 </code></pre></div>
 <p>Where DMDUSERNAME and DMDPASSWORD can be random characters (or you can use the values suggested in the error message generated in step 19).
 You do not need to save or store these values, they are only required at wallet runtime.</p>
-<p>Exit the file by hitting Control + <span class="mark_orange mark_bold">X (type “y” for saving and then ENTER)</span></p>
+<p>Exit the file by hitting Control + <span class="mark_orange mark_bold">X (type ï¿½yï¿½ for saving and then ENTER)</span></p>
 <p>If you need the most recent node list, please check: <a href="https://chainz.cryptoid.info/dmd/#!network" target="_blank">chainz.cryptoid.info</a></p>
 <p class="push">21.</p>
 <p>Synchronize to DMD's blockchain</p>
@@ -438,7 +438,7 @@ DMD server starting
 <p>Run <span class="mark_red mark_bold">`top`</span> to verify resources usage</p>
 <p><span class="mark_red mark_bold">`top`</span></p>
 <p>Find diamondd (diamond daemon) in the table.
-It should be consuming most of your Pi’s CPU.
+It should be consuming most of your Piï¿½s CPU.
 This is actually expected, since the wallet should now be synchronizing the blockchain.</p>
 <p>At this stage, you should wait for the blockchain to be fully downloaded.
 You will be able to verify this when a dramatic drop in CPU usage happens (from 90% to 5%, for instance).
@@ -531,7 +531,7 @@ cd .DMDV3
 sudo nano diamond.conf
 </code></pre></div>
 <p>Change the line <span class="mark_red mark_bold">`staking=0` to `staking=1`</span></p>
-<p>Exit the file by hitting Control + <span class="mark_orange mark_bold">x (type “y” for saving and then ENTER)</span></p>
+<p>Exit the file by hitting Control + <span class="mark_orange mark_bold">x (type ï¿½yï¿½ for saving and then ENTER)</span></p>
 <p>Restart the client and unlock the wallet for staking</p>
 <div class="kod"><span class="kod2">&nbsp;CODE</span><pre><code class="language-clike">
 cd
