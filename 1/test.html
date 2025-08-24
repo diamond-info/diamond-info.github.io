@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+		<meta charset="UTF-8">
+<title>Модальное окно работает в IE!</title>
+<style type="text/css">
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,strong, sub, sup, tt, var, legend, fieldset {	margin: 0;	padding: 0;}
+body{background-color: #D8D8D8;}
+.modal  {
+     position: fixed;
+padding: 3px;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.8);
+     z-index: 20;
+transform: scale(0);
+transition: transform 0.2s;
+visibility:hidden;
+     display: block;
+}
+/*
+.modal_dop{display:block;visibility:hidden;transform: scale(0);transition: linear 0.5s;opacity:0;border: 3px solid rgb(255,255,0);border-radius: 7;color: blue;font-family: Lato;font-size: 20px;font-weight: bold;line-height: 30px;position: absolute;margin:0 auto;top: 10%;left:30%;right:30%;max-width: 540px;text-align: center;padding: 21px;background-color: #FFF;z-index: 10;}
+*/
+.modal_dop  {
+display:block;
+visibility:hidden;
+transform: scale(0);
+transition: linear 0.5s;
+opacity:0;
+  letter-spacing: 0.01em;
+  background: none repeat scroll 0 0 rgba(12,37,65,0.6);
+  border: 2px solid rgba(255,175,32,0.8);
+  border-radius: 8px;
+  color: #FFFFE4;
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+margin:50px auto;
+top: 10%;
+left:30%;
+right:30%;
+  max-width: 640px;
+  text-align: center;
+  padding: 21px;
+z-index: 10;
+}
+#info-alert{display:block;width:60%;min-width:350px;z-index:10;padding:5px}.alert{margin:10px auto;font-size:18px;background:rgba(160,0,24,0.8);padding:2px 5px;color:#F5F5F5;font-family:Arial,sans-serif;line-height:20px;text-align:center}.attention{font-size:22px;color:#F517D4;padding-right:5px}
+h1 {text-align: center;color:green}
+</style>
+</head>
+<noscript><div id="info-alert" class="alert"><span class="attention">&#x26a0;</span>For view content, you need to enable Javascript! and use IE browser version not lower than 11</div></noscript>
+<body>
+<h1>test</h1>
+<div class="modal" id="closeModal">
+<div class="modal_dop">Уважаемый Пользователь, Вы попали на секретную страницу, своего рода 13 этаж, считайте что вам повезло, но доступ для вас здесь закрыт. У Вас два варианта, - вернуться назад  добровольно или Вы будете перенаправленны на главную через несколько секунд, пока можете посмотреть на кубики, ведь каждый, - это потенциальный доступ, к скрытым ресурсам интернета...”
+<br> Удачи!<br>
+<!--<button id="close">Close</button>-->
+</div>
+</div>
+<script type="text/javascript">
+//o = document.getElementById("op"); // это излишние закрытие
+clos = document.getElementById("closeModal");
+x = document.querySelector(".modal_dop");
+y = document.querySelector(".modal");
+//glos  = document.getElementById("close");
+// v = document.body; //получение стилей для  тега body  без id!
+
+// Функция для открытия модального окна
+function openModal() {
+  x.style.visibility = "visible";
+  y.style.visibility = "visible";
+  x.style.opacity = 1;
+  x.style.transform = "scale(1)";
+  y.style.transform = "scale(1)";
+  //v.style.background ="red"; //смена оформления для тега body  без id!
+}
+var met = localStorage.getItem('ZWcKNdjBCZNIt1FFAJ'); // Запись метки в кеш браузера
+//o.addEventListener("click", openModal); // если нужно открытие через кнопку
+function closeModal() {
+  x.style.visibility = "hidden";
+  y.style.visibility = "hidden";
+  x.style.opacity = 0;
+  x.style.transform = "scale(0)";
+  y.style.transform = "scale(0)";
+}
+//clos.addEventListener('click', closeModal);// если нужно закрытие при клике по любому элементу страницы
+   window.addEventListener('click', function(event) {
+      if (event.target == clos) {
+         closeModal();
+      }
+   });
+ if (!met) {setTimeout(openModal, 3000); localStorage.setItem('ZWcKNdjBCZNIt1FFAJ', 'true');} // Авто запуск окна через 3 секунды
+//glos.addEventListener('click', closeModal); // если нужно закрытие через кнопку
+setTimeout(function() {if (clos) {closeModal();}}, 20000); // авто закоытие окна через 20 сек
+</script>
+</body>
+</html>
