@@ -2,132 +2,15 @@
 <html>
 <head>
 		<meta charset="UTF-8">
-<title>Модальное окно работает в IE!</title>
+<title>test</title>
 <style type="text/css">
-html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,strong, sub, sup, tt, var, legend, fieldset {	margin: 0;	padding: 0;}
-body{background-color: #D8D8D8;}
-.modal  {
-     position: fixed;
-padding: 3px;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-color: rgba(0, 0, 0, 0.8);
-     z-index: 20;
-transform: scale(0);
-transition: transform 0.2s;
-visibility:hidden;
-     display: block;
-}
-/*
-.modal_dop{display:block;visibility:hidden;transform: scale(0);transition: linear 0.5s;opacity:0;border: 3px solid rgb(255,255,0);border-radius: 7;color: blue;font-family: Lato;font-size: 20px;font-weight: bold;line-height: 30px;position: absolute;margin:0 auto;top: 10%;left:30%;right:30%;max-width: 540px;text-align: center;padding: 21px;background-color: #FFF;z-index: 10;}
-*/
-.modal_dop  {
-display:block;
-visibility:hidden;
-transform: scale(0);
-transition: linear 0.5s;
-opacity:0;
-  letter-spacing: 0.01em;
-  background: none repeat scroll 0 0 rgba(12,37,65,0.6);
-  border: 2px solid rgba(255,175,32,0.8);
-  border-radius: 8px;
-  color: #FFFFE4;
-  font-family: Lato;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 30px;
-margin:50px auto;
-top: 10%;
-left:30%;
-right:30%;
-  max-width: 640px;
-  text-align: center;
-  padding: 21px;
-z-index: 10;
-}
-
 h1 {text-align: center;color:green}
 </style>
 </head>
 
 <body>
 <h1>test</h1>
-<div class="modal" id="closeModal">
-<div class="modal_dop">Уважаемый Пользователь, Вы попали на секретную страницу, своего рода 13 этаж, считайте что вам повезло, но доступ для вас здесь закрыт. У Вас два варианта, - вернуться назад  добровольно или Вы будете перенаправленны на главную через несколько секунд, пока можете посмотреть на кубики, ведь каждый, - это потенциальный доступ, к скрытым ресурсам интернета...”
-<br> Удачи!<br>
-<!--<button id="close">Close</button>-->
-</div>
-</div>
-<script type="text/javascript">
-// Функция для установки cookie работает для Chrom, Brave и хромоподобных браузеров только на сервере. IE, Firefox, Palemoon поддерживают запись кукисов в локальном режиме
-function Cook(nam, val, day) {
-var exp = "";
-  if (day) {
-    dat = new Date();
-    dat.setTime(dat.getTime() + (day * 24 * 60 * 60 * 1000));
-    exp = "; expires=" + dat.toUTCString();
-  }
-document.cookie = nam + "=" + (val || "") + exp + "; path=/";
-}
-//document.cookie = nam + "= " + val + "; " + "expires=" + exp + "; " + "path=/"; // рабочий, но более длинный вариант
 
-// Функция для получения cookie
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-
-
-//o = document.getElementById("op"); // это излишние закрытие
-clos = document.getElementById("closeModal");
-x = document.querySelector(".modal_dop");
-y = document.querySelector(".modal");
-//glos  = document.getElementById("close");
-// v = document.body; //получение стилей для  тега body  без id!
-
-// Функция для открытия модального окна
-function openModal() {
-  x.style.visibility = "visible";
-  y.style.visibility = "visible";
-  x.style.opacity = 1;
-  x.style.transform = "scale(1)";
-  y.style.transform = "scale(1)";
-  //v.style.background ="red"; //смена оформления для тега body  без id!
-}
-//o.addEventListener("click", openModal); // если нужно открытие через кнопку
-function closeModal() {
-  x.style.visibility = "hidden";
-  y.style.visibility = "hidden";
-  x.style.opacity = 0;
-  x.style.transform = "scale(0)";
-  y.style.transform = "scale(0)";
-}
-//clos.addEventListener('click', closeModal);// если нужно закрытие при клике по любому элементу страницы
-
-   window.addEventListener('click', function(event) {
-      if (event.target == clos) {
-         closeModal();
-Cook("RhZsgeOLgVM9lTMXE1", "true", 1);
-      }
-   });
-
-if (!getCookie("RhZsgeOLgVM9lTMXE1")) {
-  // Если cookie не существует, показываем модальное окно
-  setTimeout(openModal, 3000);
-  };
-
-
-//setTimeout(openModal, 3000);// Авто запуск окна через 3 секунды
-//glos.addEventListener('click', closeModal); // если нужно закрытие через кнопку
-setTimeout(function() {if (clos) {closeModal();Cook("RhZsgeOLgVM9lTMXE1", "true", 1);}}, 20000); // авто закоытие окна через 20 сек
-</script>
 </body>
 </html>
+
