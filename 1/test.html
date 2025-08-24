@@ -47,11 +47,11 @@ right:30%;
   padding: 21px;
 z-index: 10;
 }
-#info-alert{display:block;width:60%;min-width:350px;z-index:10;padding:5px}.alert{margin:10px auto;font-size:18px;background:rgba(160,0,24,0.8);padding:2px 5px;color:#F5F5F5;font-family:Arial,sans-serif;line-height:20px;text-align:center}.attention{font-size:22px;color:#F517D4;padding-right:5px}
+
 h1 {text-align: center;color:green}
 </style>
 </head>
-<noscript><div id="info-alert" class="alert"><span class="attention">&#x26a0;</span>For view content, you need to enable Javascript! and use IE browser version not lower than 11</div></noscript>
+
 <body>
 <h1>test</h1>
 <div class="modal" id="closeModal">
@@ -61,6 +61,31 @@ h1 {text-align: center;color:green}
 </div>
 </div>
 <script type="text/javascript">
+// Функция для установки cookie работает для Chrom, Brave и хромоподобных браузеров только на сервере. IE, Firefox, Palemoon поддерживают запись кукисов в локальном режиме
+function Cook(nam, val, day) {
+var exp = "";
+  if (day) {
+    dat = new Date();
+    dat.setTime(dat.getTime() + (day * 24 * 60 * 60 * 1000));
+    exp = "; expires=" + dat.toUTCString();
+  }
+document.cookie = nam + "=" + (val || "") + exp + "; path=/";
+}
+//document.cookie = nam + "= " + val + "; " + "expires=" + exp + "; " + "path=/"; // рабочий, но более длинный вариант
+
+// Функция для получения cookie
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+
 //o = document.getElementById("op"); // это излишние закрытие
 clos = document.getElementById("closeModal");
 x = document.querySelector(".modal_dop");
@@ -77,7 +102,6 @@ function openModal() {
   y.style.transform = "scale(1)";
   //v.style.background ="red"; //смена оформления для тега body  без id!
 }
-var met = localStorage.getItem('ZWcKNdjBCZNIt1FFAJ'); // Запись метки в кеш браузера
 //o.addEventListener("click", openModal); // если нужно открытие через кнопку
 function closeModal() {
   x.style.visibility = "hidden";
@@ -87,14 +111,23 @@ function closeModal() {
   y.style.transform = "scale(0)";
 }
 //clos.addEventListener('click', closeModal);// если нужно закрытие при клике по любому элементу страницы
+
    window.addEventListener('click', function(event) {
       if (event.target == clos) {
          closeModal();
+Cook("RhZsgeOLgVM9lTMXE1", "true", 1);
       }
    });
- if (!met) {setTimeout(openModal, 3000); localStorage.setItem('ZWcKNdjBCZNIt1FFAJ', 'true');} // Авто запуск окна через 3 секунды
+
+if (!getCookie("RhZsgeOLgVM9lTMXE1")) {
+  // Если cookie не существует, показываем модальное окно
+  setTimeout(openModal, 3000);
+  };
+
+
+//setTimeout(openModal, 3000);// Авто запуск окна через 3 секунды
 //glos.addEventListener('click', closeModal); // если нужно закрытие через кнопку
-setTimeout(function() {if (clos) {closeModal();}}, 20000); // авто закоытие окна через 20 сек
+setTimeout(function() {if (clos) {closeModal();Cook("RhZsgeOLgVM9lTMXE1", "true", 1);}}, 20000); // авто закоытие окна через 20 сек
 </script>
 </body>
 </html>
